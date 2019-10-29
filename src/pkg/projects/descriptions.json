@@ -40,6 +40,11 @@
         "CommonTypes": [ ]
     },
     {
+        "Name": "Microsoft.NETCore.App.Crossgen2",
+        "Description": "Crossgen2 Package.",
+        "CommonTypes": [ ]
+    },
+    {
         "Name": "Microsoft.NETCore.App.Internal",
         "Description": "Transport package for .NET Core App runtime assets.",
         "CommonTypes": [ ]

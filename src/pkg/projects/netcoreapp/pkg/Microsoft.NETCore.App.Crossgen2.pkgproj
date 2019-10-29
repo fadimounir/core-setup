@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageRID Condition="'$(PackageRID)' == ''">$(OutputRid)</PackageRID>
+    <BuildOnUnknownPlatforms>false</BuildOnUnknownPlatforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <BuildRID Remove="@(BuildRID)"/>
+    <BuildRID Include="win-x64" />
+
+    <RestoreBuildRID Remove="@(RestoreBuildRID)" />
+    <RestoreBuildRID Include="win-x64" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="transport.runtime.$(OutputRid).Microsoft.NETCore.Crossgen2" Version="$(MicrosoftNETCoreCrossgen2PackageVersion)" />
+  </ItemGroup>
+
+  <Import Project="..\..\Microsoft.NETCore.DotNetCrossgen2\Microsoft.NETCore.DotNetCrossgen2.props" />
+
+</Project>
